@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wch.community.mapper.TUserMapper">
+  <resultMap id="TUserBaseMap" type="com.wch.community.domain.entity.TUser">
+    <!--@mbg.generated-->
+    <id column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="user_img" jdbcType="VARCHAR" property="userImg" />
+    <result column="user_sex" jdbcType="VARCHAR" property="userSex" />
+    <result column="user_details" jdbcType="VARCHAR" property="userDetails" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="article_num" jdbcType="INTEGER" property="articleNum" />
+    <result column="attention_num" jdbcType="INTEGER" property="attentionNum" />
+    <result column="fans_num" jdbcType="INTEGER" property="fansNum" />
+    <result column="click_num_sum" jdbcType="INTEGER" property="clickNumSum" />
+  </resultMap>
+
+  <resultMap id="TUserVOMap" type="com.wch.community.domain.vo.TUserVO" extends="TUserBaseMap">
+
+  </resultMap>
+  <select id="login" resultMap="TUserVOMap">
+    select u.user_name,u.password
+    from blogs.t_user u where u.user_name=#{username}
+  </select>
+  <insert id="register" >
+    insert into blogs.t_user(user_name, nickname, password) value (
+    #{username},#{nickname},#{password})
+  </insert>
+  <update id="resetPassword">
+    update blogs.t_user u set password=#{password} where u.user_name=#{username}
+  </update>
+
+</mapper>

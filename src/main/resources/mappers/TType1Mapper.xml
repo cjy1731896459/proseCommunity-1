@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wch.community.mapper.TType1Mapper">
+  <resultMap id="BaseResultMap" type="com.wch.community.domain.entity.TType1">
+    <!--@mbg.generated-->
+    <id column="type1_id" jdbcType="INTEGER" property="type1Id" />
+    <result column="type1_name" jdbcType="VARCHAR" property="type1Name" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+
+</mapper>

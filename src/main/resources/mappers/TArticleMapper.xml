@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wch.community.mapper.TArticleMapper">
+  <resultMap id="BaseResultMap" type="com.wch.community.domain.entity.TArticle">
+    <!--@mbg.generated-->
+    <id column="article_id" jdbcType="INTEGER" property="articleId" />
+    <result column="article_title" jdbcType="VARCHAR" property="articleTitle" />
+    <result column="article_content" jdbcType="LONGVARCHAR" property="articleContent" />
+    <result column="type2_id" jdbcType="INTEGER" property="type2Id" />
+    <result column="click_like_num" jdbcType="INTEGER" property="clickLikeNum" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+
+</mapper>
